@@ -26,8 +26,8 @@ public class SecurityConfig {
 
         //if we want to authorize every request
         http.authorizeHttpRequests(auth ->
-                 auth.requestMatchers("/h2-console/**").permitAll()
-                         .anyRequest().authenticated())
+                 auth.requestMatchers("/h2-console/**","/api").permitAll()
+                        .anyRequest().authenticated())
                 //.formLogin(withDefaults());
                 .httpBasic(withDefaults());
 
